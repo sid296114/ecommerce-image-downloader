@@ -1,0 +1,4 @@
+# Netlify 部署配置（base directory 设为 website）
+[build]
+  command = "npm run build"
+  publish = "dist"

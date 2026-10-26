@@ -1,0 +1,38 @@
+/* ============================================================
+ * content.css —— 「获取图片」悬浮按钮样式
+ * 右下角悬浮、圆角、阴影、hover 反馈，不遮挡页面原有操作
+ * ============================================================ */
+
+#ecom-img-ext-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 80px; /* 留出底部空间，避免遮挡返回顶部/客服等悬浮入口 */
+  z-index: 2147483646;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(80, 70, 220, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+#ecom-img-ext-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(80, 70, 220, 0.45);
+}
+
+#ecom-img-ext-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(80, 70, 220, 0.35);
+}
+
+#ecom-img-ext-btn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}

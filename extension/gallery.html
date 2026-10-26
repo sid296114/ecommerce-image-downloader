@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品图片提取结果</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <h1>商品图片 <span id="totalCount" class="muted"></span></h1>
+    <div class="actions">
+      <button id="btnSelectAll" type="button">全选</button>
+      <button id="btnInvert" type="button">反选</button>
+      <span id="selectedCount">已选 0 张</span>
+      <button id="btnDownload" type="button" class="primary" disabled>下载选中</button>
+    </div>
+  </header>
+
+  <div id="progressWrap" class="hidden">
+    <div class="progress-bar"><div id="progressFill"></div></div>
+    <span id="progressText"></span>
+  </div>
+
+  <div id="grid" class="grid"></div>
+
+  <div id="empty" class="hidden">
+    未提取到图片。请回到商品详情页，点击右下角「获取图片」按钮。
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

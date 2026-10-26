@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>本地测试：模拟商品详情页</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; padding: 16px; }
+    .box { width: 200px; height: 200px; background-size: cover; margin: 8px; display: inline-block; border: 1px solid #ddd; }
+    img { margin: 8px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>模拟商品详情页（用于测试图片提取逻辑）</h1>
+  <p>以下元素覆盖了不同的图片来源与干扰项：</p>
+
+  <!-- 1. 普通商品图 -->
+  <img src="https://picsum.photos/seed/product1/800/800" alt="主图" />
+
+  <!-- 2. srcset（应取最大 960w） -->
+  <img
+    src="https://picsum.photos/seed/product2/480/480"
+    srcset="https://picsum.photos/seed/product2/480/480 480w, https://picsum.photos/seed/product2/960/960 960w"
+    alt="srcset 图" />
+
+  <!-- 3. 懒加载 data-src（无 src） -->
+  <img data-src="https://picsum.photos/seed/product3/700/700" alt="懒加载图" />
+
+  <!-- 4. 背景图 -->
+  <div class="box" style="background-image: url('https://picsum.photos/seed/product4/600/600');"></div>
+
+  <!-- 5. 小图标（应被过滤） -->
+  <img src="https://picsum.photos/seed/icon/40/40" alt="小图标" />
+
+  <!-- 6. logo（URL 关键词，应被过滤） -->
+  <img src="https://example.com/static/logo.png" alt="logo" />
+
+  <!-- 7. 1x1 像素（应被过滤） -->
+  <img src="https://picsum.photos/seed/px/1/1" alt="1x1" />
+
+  <script>
+    // 提示：本页面是 file:// 协议，content_scripts.matches 默认不含 file://。
+    // 若要在此页实测 content.js，请临时把 "file:///*" 加入 manifest 的
+    // content_scripts.matches（或 matches 增加 "*://localhost/*" 后通过本地服务访问）。
+    console.log('模拟商品详情页已加载，可在此验证提取逻辑。');
+  </script>
+</body>
+</html>
