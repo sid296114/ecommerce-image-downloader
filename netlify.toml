@@ -1,0 +1,6 @@
+# Netlify 部署配置（仓库根）
+# 连接 GitHub 后 Netlify 自动按此配置构建：base=website，构建产物 website/dist
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = "dist"
