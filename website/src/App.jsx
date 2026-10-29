@@ -83,7 +83,8 @@ function Hero() {
       </p>
       <div className="mt-10 flex items-center justify-center gap-4">
         <a
-          href="#install"
+          href="/ecom-image-downloader-v1.0.0.zip"
+          download="ecom-image-downloader-v1.0.0.zip"
           className="rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:opacity-90"
         >
           免费使用
@@ -197,13 +198,29 @@ function Install() {
   return (
     <section id="install" className="mx-auto max-w-6xl px-6 py-20">
       <h2 className="text-center text-2xl font-bold">安装步骤</h2>
-      <p className="mt-2 text-center text-slate-500">无需打包，直接加载源码即可使用</p>
-      <div className="mx-auto mt-12 max-w-3xl space-y-4">
+      <p className="mt-2 text-center text-slate-500">下载安装包，解压后用开发者模式加载到 Chrome</p>
+
+      {/* 真正的下载入口 */}
+      <div className="mt-8 text-center">
+        <a
+          href="/ecom-image-downloader-v1.0.0.zip"
+          download="ecom-image-downloader-v1.0.0.zip"
+          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:opacity-90"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+          </svg>
+          下载扩展 ZIP（v1.0.0）
+        </a>
+        <p className="mt-3 text-sm text-slate-400">解压后按下方步骤加载到 Chrome</p>
+      </div>
+
+      <div className="mx-auto mt-10 max-w-3xl space-y-4">
         {[
-          '下载本扩展源码目录（含 manifest.json 等全部文件）',
+          '解压下载的 ZIP 安装包到本地文件夹',
           '打开 Chrome，地址栏输入 chrome://extensions 并回车',
           '开启右上角「开发者模式」',
-          '点击「加载已解压的扩展程序」，选择 extension 目录',
+          '点击「加载已解压的扩展程序」，选择解压出的文件夹',
           '打开任意支持的电商商品详情页，右下角点击「获取图片」',
         ].map((text, i) => (
           <div key={i} className="flex items-start gap-4 rounded-xl border border-slate-100 bg-white p-4">
